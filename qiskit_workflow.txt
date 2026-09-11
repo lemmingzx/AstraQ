@@ -1,0 +1,22 @@
+Topic: How Qiskit Programs Are Structured (The Four-Step Pattern)
+
+What is Qiskit: Qiskit is an open-source quantum computing software framework, originally developed by IBM, written in Python. It lets programmers build quantum circuits, run them on local simulators (which run on an ordinary computer with no quantum hardware involved) or on real IBM quantum processors accessed over the internet, and analyze the results. It's one of the most widely used tools for learning and doing practical quantum programming, precisely because it supports both free local simulation and real hardware within the same framework.
+
+Every Qiskit program, no matter how complex, follows the same basic four-step pattern. Understanding this pattern matters more than memorizing syntax, because it explains *why* code is organized the way it is.
+
+Step 1 — Map the problem:
+This means turning whatever you're trying to solve into an actual quantum circuit. For example, if you want to demonstrate superposition, you "map" that idea into a circuit with one qubit and a Hadamard gate. If you want entanglement, you map it into two qubits with a Hadamard gate and a CNOT gate. In the code you've already written, this step is the superposition_demo() and bell_state_demo() functions — they literally build the QuantumCircuit object.
+
+Step 2 — Optimize (called "transpilation"):
+Before a circuit can run, it sometimes needs to be rewritten into a form the specific backend (simulator or real hardware) can actually execute — different backends support different basic gates, so Qiskit can automatically convert your circuit into an equivalent one using only the gates that backend understands. For a simple local simulator like the one used in this project (AerSimulator), this step happens automatically behind the scenes and doesn't need to be done manually. It becomes much more important when running on real quantum hardware, which has strict physical limitations.
+
+Step 3 — Execute:
+This is running the circuit and collecting results. In the code already written, this is the run_circuit() function — it takes a circuit, runs it a set number of times ("shots," here 1000), and returns how often each outcome occurred. Running many shots matters because quantum measurement is probabilistic: a single run only gives one random outcome, but many shots reveal the underlying probability pattern (like the 50/50 split for superposition).
+
+Step 4 — Post-process:
+This means taking the raw results and turning them into something meaningful — printing them, plotting them as a chart, or interpreting what they mean. In this project, this is done by printing the counts dictionary, and separately, by displaying it as a bar chart and having the AI tutor explain what the result demonstrates.
+
+Why this matters for this project: every course topic (superposition, entanglement, and any future topic) follows this exact same four-step shape: build a small circuit (map), run it on the local simulator (optimize + execute happen automatically), then show and explain the result (post-process). This is the repeatable pattern the whole platform is built on — new topics just mean writing a new circuit-building function and a new explanation file, not reinventing the workflow.
+
+Note on real quantum hardware: real IBM quantum computers exist and can run these same circuits, but they introduce extra complexity — physical noise, error rates, and techniques like resilience levels and dynamical decoupling to reduce that noise. This project intentionally uses only local simulation (AerSimulator), which behaves ideally with no noise, since it's simpler, free, and sufficient for teaching the core concepts. Real hardware execution is a natural "future scope" extension, not something needed for the current build.
+

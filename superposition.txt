@@ -1,0 +1,10 @@
+Topic: Superposition
+
+A classical bit is always either 0 or 1. A qubit, the basic unit of quantum information, can exist in a combination of the 0 and 1 states at the same time — this is called superposition. It is not that the qubit is "secretly" one or the other and we just don't know which; it genuinely exists in both possibilities until it is measured.
+
+The Hadamard gate (H gate) is the standard way to put a qubit into an equal superposition. Starting from state |0>, applying an H gate produces a state that has a 50% chance of measuring as 0 and a 50% chance of measuring as 1. This is exactly what the accompanying circuit demonstrates: a single qubit, an H gate, then a measurement, run 1000 times, producing roughly a 50/50 split between '0' and '1'.
+
+Superposition is important because it is the foundation of quantum parallelism: with more qubits in superposition together, a quantum computer can represent an exponentially large number of states simultaneously, which certain algorithms (like Grover's search) exploit for speedups over classical computers. Superposition by itself does not make a computer faster — it's the combination with specific quantum algorithms that provides the advantage.
+
+Common misconception to avoid: superposition does not mean "fast random guessing" or "trying every answer at once for free." The power comes from carefully designed algorithms that use interference between the superposed states to amplify correct answers and cancel out wrong ones.
+

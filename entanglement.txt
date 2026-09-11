@@ -1,0 +1,12 @@
+Topic: Entanglement
+
+Entanglement is a quantum phenomenon where two or more qubits become correlated such that the measurement outcome of one qubit is directly linked to the outcome of the other, no matter how far apart they are physically separated.
+
+The simplest entangled state is called a Bell state. It is created by putting one qubit into superposition with a Hadamard (H) gate, then applying a CNOT (controlled-NOT) gate using that qubit as the control and a second qubit as the target. The result is a state where measuring the two qubits together always gives matching outcomes: either both are 0, or both are 1 — you should essentially never see one qubit read 0 and the other read 1 for this particular circuit.
+
+This matches exactly what the accompanying circuit demonstrates: running the Bell state circuit 1000 times produces results clustering almost entirely around '00' and '11', with '01' and '10' appearing rarely or not at all. That strong correlation, appearing even though each individual qubit's own result still looks random, is the signature of entanglement.
+
+Important and commonly misunderstood point: entanglement does NOT allow faster-than-light communication. You cannot use it to send a message instantly across a distance. The correlation is real, but to actually compare or use the results meaningfully, you still need to communicate the measurement outcomes through a normal classical channel (radio, internet, etc.), which is bounded by the speed of light. Entanglement is a resource for computation and secure communication protocols, not a way to bypass physics.
+
+Entanglement, combined with superposition, is what gives quantum computers their unique computational structure — qubits are not just individually uncertain, they can be jointly and inseparably linked.
+
