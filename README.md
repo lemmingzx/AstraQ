@@ -33,7 +33,7 @@ Most "AI tutor" projects wrap a chatbot around a subject and hope for the best. 
 ## Quick Start (Linux / Ubuntu)
 
 ```bash
-git clone https://github.com/<your-username>/astraq.git
+git clone https://github.com/lemmingzx/AstraQ
 cd astraq
 chmod +x setup.sh
 ./setup.sh
