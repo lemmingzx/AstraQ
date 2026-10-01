@@ -1,0 +1,10 @@
+Modern computing is built on transistors — tiny switches controlling electron flow to represent binary bits (0 or 1). As manufacturers shrink transistors toward atomic scale, quantum effects like tunneling (electrons passing through barriers they classically shouldn't) start interfering with reliable operation, pushing chip designers toward new architectures.
+
+Quantum computers take a different approach entirely, built on two core quantum properties:
+
+Superposition: Unlike a classical bit, a qubit can exist in a combination of 0 and 1 states at once. Adding qubits grows the number of representable states exponentially, enabling certain kinds of massive parallel computation.
+
+Entanglement: Two or more qubits can become correlated such that measuring one instantly tells you something about the other's state, even at a distance. Importantly, this cannot be used to send information faster than light — the correlation is real, but using it still requires a classical communication channel. Entanglement is a resource for computation and cryptography, not a communication shortcut.
+
+Quantum computers won't replace everyday devices — they excel at specific problems: searching unsorted data faster (Grover's algorithm, roughly square-root time vs. classical), threatening current encryption by efficiently solving problems like integer factorization (Shor's algorithm), and simulating quantum systems directly — useful for drug discovery and materials science, since classical computers struggle to simulate quantum nature itself.
+

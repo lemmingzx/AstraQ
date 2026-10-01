@@ -1,0 +1,18 @@
+Topic: Hybrid Quantum-Classical Machine Learning (PennyLane)
+
+Note on scope: this topic is conceptual only in the current version of this project. Unlike the Superposition, Entanglement, and Deutsch-Jozsa courses, there is no live PennyLane circuit implemented or run here — PennyLane is not installed or imported anywhere in this project's code. This section exists to explain the idea and the tool, not to demonstrate a working circuit. If a live demo is added later, this note should be updated.
+
+The core idea: today's quantum computers are small, noisy, and error-prone (often called the "NISQ" era — Noisy Intermediate-Scale Quantum). Running a large, fully quantum algorithm end-to-end usually isn't practical yet. Hybrid quantum-classical machine learning works around this by splitting the work: a small, tunable quantum circuit (called a "variational" circuit, because it has adjustable parameters) does a limited amount of quantum processing, while a classical computer handles training and optimization — the part that benefits most from being large-scale and reliable.
+
+The hybrid loop works roughly like this:
+1. A classical computer picks a set of parameters (numbers) for the quantum circuit.
+2. The quantum circuit (or a quantum simulator) runs using those parameters, and a measurement result is obtained.
+3. That result is turned into a single number representing "how good" the outcome was — a cost or loss value, the same idea used in training classical neural networks.
+4. A classical optimizer looks at that cost and decides how to adjust the parameters to do better next time.
+5. Steps 2 to 4 repeat many times, gradually improving the circuit's parameters — this is "training," just like training a classical machine learning model, except part of the computation happens on a quantum circuit instead of purely classical layers.
+
+What PennyLane specifically is: PennyLane is an open-source Python library, built by Xanadu, designed specifically for this hybrid approach. Its key contribution is making quantum circuits "differentiable" — meaning it can automatically compute how a small change in the circuit's parameters would change the output, using a technique called the parameter-shift rule. This is what lets classical optimization techniques (like gradient descent, the same method used to train most neural networks) be applied directly to quantum circuits. PennyLane also connects directly to popular classical machine learning frameworks such as PyTorch, TensorFlow, and JAX, so a single model can mix classical neural network layers with quantum circuit layers.
+
+Where this approach is used: well-known examples of this general pattern include VQE (Variational Quantum Eigensolver, used in quantum chemistry to estimate molecule energies), QAOA (Quantum Approximate Optimization Algorithm, used for optimization problems), and various quantum machine learning classifiers, where a variational circuit acts similarly to a layer in a neural network.
+
+Relationship to the rest of this project: Qiskit (used elsewhere in this project) can also build variational circuits, but PennyLane's specific strength is its tight, purpose-built integration with classical ML training workflows through automatic differentiation. They are not competitors so much as tools with different primary focuses — Qiskit is broader general-purpose quantum programming, PennyLane is more specialized toward the hybrid quantum-classical ML training loop described above.

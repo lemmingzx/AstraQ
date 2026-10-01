@@ -1,0 +1,23 @@
+Topic: The Deutsch-Jozsa Algorithm
+
+The problem it solves: imagine a hidden function f that takes n input bits and outputs either 0 or 1. You're promised the function is one of two types: "constant" (it outputs the exact same value — always 0, or always 1 — no matter the input) or "balanced" (it outputs 0 for exactly half of all possible inputs, and 1 for the other half). Your job is to figure out which type it is, using the function as a black box ("oracle") you can query.
+
+Classically, in the worst case, you might need to check more than half of all possible inputs (2^(n-1) + 1 queries) before you can be certain which type it is — if you keep getting the same answer, it might still turn out balanced on the very next check. The Deutsch-Jozsa algorithm solves this with a single query, with 100% certainty, using superposition and interference. This is one of the first and clearest examples of a genuine quantum speedup, even though the function itself isn't a "real world" problem — it's a clean demonstration of the principle.
+
+How the circuit works (matching the actual implementation in this project, using n = 2 input qubits):
+
+1. Set up n input qubits (starting at |0>) plus one extra "ancilla" qubit, which is set to |1> using an X gate. All qubits are real qubits — the ancilla is not a classical bit, it plays a specific role in making the oracle's effect visible as a phase flip.
+
+2. Apply a Hadamard gate to all n+1 qubits, putting everything into superposition.
+
+3. Apply the oracle — the actual function being tested. In this project:
+   - The constant oracle does nothing at all (identity) — representing a function that always outputs 0.
+   - The balanced oracle applies a CNOT gate from each input qubit to the ancilla qubit — representing the function f(x) = x0 XOR x1, which is balanced (true for exactly half of all 2-bit inputs).
+
+4. Apply a Hadamard gate again, but only to the n input qubits (not the ancilla).
+
+5. Measure the n input qubits.
+
+The result: if the oracle was constant, every input qubit measures 0 (the result is "00" for n=2), every single time, with certainty. If the oracle was balanced, the result is some non-zero bitstring, every single time, with certainty — for this project's specific XOR oracle, that result is consistently "11". This is different from the superposition and entanglement demos, which produce a probability split (like 50/50) — Deutsch-Jozsa is deterministic: given a fixed oracle, you always get the exact same answer, which is the whole point of the algorithm's certainty.
+
+The actual working code for both oracles (constant and balanced) is included as reference material alongside this topic — refer to it directly rather than writing new code from memory, since Qiskit's exact syntax changes between versions and only the code shown here is verified to work with the version installed in this project.
