@@ -4,7 +4,7 @@
 
 AstraQ pairs a locally-running AI tutor with real quantum circuit execution, visual state exploration, a hands-on code environment, and a built-in assessment system — so learners can read an explanation, run an actual quantum circuit, see the result, visualize the quantum state, debug their own code, and test their understanding, all without an internet connection, a cloud API key, or any ongoing cost.
 
-Built for Smart India Hackathon 2026, problem statement **SIH26140 — AI-Based Interactive Quantum Algorithm Learning Platform**. 🏆 1st place, Inter-College Internal Hackathon 2026.
+Built for Smart India Hackathon 2026, problem statement **SIH26140 — AI-Based Interactive Quantum Algorithm Learning Platform**.
 
 ---
 
@@ -24,17 +24,17 @@ Most "AI tutor" projects wrap a chatbot around a subject and hope for the best. 
 
 ## Features
 
-- 📘 **Six topic-based courses** — What is a Quantum Computer?, Superposition, Entanglement, the Qiskit 4-step workflow, the Deutsch-Jozsa algorithm, and Hybrid Quantum-Classical ML (PennyLane) — each with its own isolated knowledge file.
-- 🤖 **Local AI tutor, dual-model** — [Qwen 2.5 (7B)](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) is the default engine (tested as more reliable across harder topics), with [Phi-3-mini (3.8B)](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct) available as a fast, lightweight fallback for lower-spec hardware — both served locally via Ollama.
-- 📎 **RAG-powered reference material** — drop PDFs into an "Official" (team-curated) or "User-uploaded" library per topic; relevant excerpts are retrieved automatically via TF-IDF similarity search and cited by source.
-- ⚛️ **Real Qiskit circuits** — Superposition, Bell-state entanglement, and both Deutsch-Jozsa oracle variants (constant/balanced) run on Qiskit's `AerSimulator`, with results rendered as a live bar chart.
-- 🔮 **Bloch sphere visualization** — real quantum state visualization via Qiskit's own `Statevector` and `plot_bloch_multivector`, computed before measurement collapses the state.
-- 💻 **Code Lab** — verified starter code templates, plus an AI-assisted debugger: paste your own circuit code, run it in an isolated subprocess (so a crash can't take down the main app), and get an explanation grounded in the real Python traceback produced.
-- 🎨 **Visual Circuit Builder** — drag-and-drop gates (H, X) onto qubit wires, add a CNOT, and generate real, runnable Qiskit code live — copy it straight into Code Lab to execute.
-- 📝 **Exam & Report Card** — hand-verified quiz questions per topic, automatic scoring, and a progress dashboard (session-based).
-- 💬 **Context-aware Q&A** — the tutor remembers recent conversation turns, so natural follow-ups and corrections ("I mean X") work as expected.
-- 🖥️ **One-command setup** — `setup.sh` installs the entire stack (Qiskit, Ollama, both AI models, Streamlit, RAG dependencies) and sets up a simple `astraq` launcher command plus a desktop application entry.
-- 📜 **Built-in Setup Guide and Credits pages** — in-app, OS-aware setup instructions and full attribution for every open-source component used.
+-  **Six topic-based courses** — What is a Quantum Computer?, Superposition, Entanglement, the Qiskit 4-step workflow, the Deutsch-Jozsa algorithm, and Hybrid Quantum-Classical ML (PennyLane) — each with its own isolated knowledge file.
+-  **Local AI tutor, dual-model** — [Qwen 2.5 (7B)](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) is the default engine (tested as more reliable across harder topics), with [Phi-3-mini (3.8B)](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct) available as a fast, lightweight fallback for lower-spec hardware — both served locally via Ollama.
+- **RAG-powered reference material** — drop PDFs into an "Official" (team-curated) or "User-uploaded" library per topic; relevant excerpts are retrieved automatically via TF-IDF similarity search and cited by source.
+- **Real Qiskit circuits** — Superposition, Bell-state entanglement, and both Deutsch-Jozsa oracle variants (constant/balanced) run on Qiskit's `AerSimulator`, with results rendered as a live bar chart.
+- **Bloch sphere visualization** — real quantum state visualization via Qiskit's own `Statevector` and `plot_bloch_multivector`, computed before measurement collapses the state.
+- **Code Lab** — verified starter code templates, plus an AI-assisted debugger: paste your own circuit code, run it in an isolated subprocess (so a crash can't take down the main app), and get an explanation grounded in the real Python traceback produced.
+-  **Visual Circuit Builder** — drag-and-drop gates (H, X) onto qubit wires, add a CNOT, and generate real, runnable Qiskit code live — copy it straight into Code Lab to execute.
+-  **Exam & Report Card** — hand-verified quiz questions per topic, automatic scoring, and a progress dashboard (session-based).
+-  **Context-aware Q&A** — the tutor remembers recent conversation turns, so natural follow-ups and corrections ("I mean X") work as expected.
+- **One-command setup** — `setup.sh` installs the entire stack (Qiskit, Ollama, both AI models, Streamlit, RAG dependencies) and sets up a simple `astraq` launcher command plus a desktop application entry.
+-  **Built-in Setup Guide and Credits pages** — in-app, OS-aware setup instructions and full attribution for every open-source component used.
 
 ---
 
@@ -190,4 +190,4 @@ Mapped directly against the official SIH26140 problem statement's expected deliv
 
 ## Acknowledgements
 
-Built for **Smart India Hackathon 2026**, problem statement SIH26140 — AI-Based Interactive Quantum Algorithm Learning Platform. 🏆 1st Place, Inter-College Internal Hackathon Round, Team Tech Quanta.
+Built for **Smart India Hackathon 2026**, problem statement SIH26140 — AI-Based Interactive Quantum Algorithm Learning Platform. 
